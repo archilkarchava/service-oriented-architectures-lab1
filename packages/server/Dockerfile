@@ -1,14 +1,16 @@
 FROM node:lts-alpine
-
-ARG APP_DIR=app
-WORKDIR ${APP_DIR}
-COPY package.json ./
-COPY yarn.lock ./
-RUN npm --global install yarn
-ENV NODE_ENV production
+# Create Directory for the Container
+WORKDIR /usr/src/app
+# Only copy the package.json file to work directory
+COPY package.json .
+COPY yarn.lock .
+# Install all Packages
 RUN yarn install
-COPY . .
+# Copy all other source code to work directory
+ADD . /usr/src/app
+# TypeScript
+RUN yarn global add typescript@3.6.2 cross-env
 RUN yarn build
-EXPOSE 3000
-
+# Start
+EXPOSE 4000
 CMD [ "yarn", "start" ]

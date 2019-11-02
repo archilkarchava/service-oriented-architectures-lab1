@@ -14,11 +14,13 @@
     "@types/react": "16.9.11",
     "@types/react-dom": "16.9.3",
     "@types/socket.io-client": "^1.4.32",
+    "cross-env": "^6.0.3",
+    "serve": "^11.2.0",
     "typescript": "3.6.4"
   },
   "scripts": {
-    "start": "serve -s build",
-    "dev": "react-scripts start",
+    "start": "cross-env NODE_ENV=production serve -s build",
+    "dev": "cross-env NODE_ENV=development react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

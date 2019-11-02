@@ -80,12 +80,12 @@ import './App.css';
 //     );
 //   }
 // }
-const socketUrl = 'http://localhost:4000';
+const socketUrl = process.env.NODE_ENV === 'production' ? 'http://serviceorientedarchitectureslab1-env.rjimemfqik.eu-central-1.elasticbeanstalk.com' : 'http://localhost:4000';
 const socket = io(socketUrl);
 socket.open();
 
 const App: React.FC = () => {
-  const [connectionId, setConnectionId] = useState('undefined');
+  const [connectionId, setConnectionId] = useState<string | undefined>(undefined);
   const [input, setInput] = useState('');
   const [output, setOutput] = useState<[string, number][]>([]);
   useEffect(() => {
@@ -102,7 +102,7 @@ const App: React.FC = () => {
 
   return (
     <div className="App">
-      <div>Connection id: {connectionId}</div>
+      <div>Connection id: {connectionId ? connectionId : 'undefined'}</div>
       <textarea onChange={e => setInput(e.target.value)}></textarea>
       <div>{output.map((entry) => {
         const key = entry[0]
