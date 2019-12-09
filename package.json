@@ -7,14 +7,15 @@
     "concurrently": "^5.0.0"
   },
   "scripts": {
-    "dev:server": "yarn workspace lab1-server dev",
-    "dev:client": "yarn workspace lab1-client dev",
+    "dev:server": "yarn workspace @lab1/server dev",
+    "dev:client": "yarn workspace @lab1/client dev",
     "dev": "concurrently \"yarn dev:client\" \"yarn dev:server\"",
-    "build:server": "yarn workspace lab1-server build",
-    "build:client": "yarn workspace lab1-client build",
+    "build:server": "yarn workspace @lab1/server build",
+    "build:client": "yarn workspace @lab1/client build",
     "build": "concurrently \"yarn build:client\" \"yarn build:server\"",
-    "start:server": "yarn workspace lab1-server start",
-    "start:client": "yarn workspace lab1-client start",
-    "start": "concurrently \"yarn start:client\" \"yarn start:server\""
+    "start:server": "yarn workspace @lab1/server start",
+    "start:client": "yarn workspace @lab1/client start",
+    "start": "concurrently \"yarn start:client\" \"yarn start:server\"",
+    "deploy:server": "yarn workspace @lab1/server deploy"
   }
 }

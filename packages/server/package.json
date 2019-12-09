@@ -1,5 +1,5 @@
 {
-  "name": "lab1-server",
+  "name": "@lab1/server",
   "version": "1.0.0",
   "description": "Text analyzer server.",
   "author": "Archil Karchava",

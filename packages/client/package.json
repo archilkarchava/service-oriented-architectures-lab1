@@ -1,5 +1,5 @@
 {
-  "name": "lab1-client",
+  "name": "@lab1/client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
